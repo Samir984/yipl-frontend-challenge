@@ -2,7 +2,7 @@
 import { IoIosClose } from "react-icons/io";
 import { IoSearch } from "react-icons/io5";
 
-export default function SearchPop({
+export default function SearchPopup({
   setDarkBgGround,
   setOpenSearchBox,
   openSearchBox,

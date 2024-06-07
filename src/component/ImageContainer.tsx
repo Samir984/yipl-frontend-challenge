@@ -10,11 +10,17 @@ export default function ImageContainer({
 }: ImageContainerType) {
   return (
     <div
-      className={`flex flex-col justify-between max-w-[328px] max-h-[471px] ${
+      className={`flex flex-col   justify-between max-w-[328px] h-[471px] ${
         className && className
       }`}
     >
-      <img src={image} alt="image" className="w-full max-h-[415px]" />
+      <div className="w-full  max-h-[415px] overflow-hidden">
+        <img
+          src={image}
+          alt="image"
+          className="hover:scale-[1.1] transition-all duration-300"
+        />
+      </div>
       <h4 className="font-inter font-semibold ">{name}</h4>
     </div>
   );

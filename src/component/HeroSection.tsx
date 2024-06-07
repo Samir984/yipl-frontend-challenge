@@ -2,7 +2,7 @@ import { useState } from "react";
 import heroBgImg from "../assets/hero.jpeg";
 import Header from "./Header";
 import Container from "./Container";
-import SearchPop from "./SearchPop";
+import SearchPop from "./SearchPopup";
 
 export default function HeroSection() {
   const [darkBgGround, setDarkBgGround] = useState(false);
