@@ -6,6 +6,10 @@ export default {
       inter: ["Inter"],
     },
     extend: {
+      colors: {
+        "hero-bg1": "#002953",
+        "hero-bg2": "#002D5B",
+      },
       screens: {
         phone: "420px",
         tablet: "640px",

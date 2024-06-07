@@ -1,6 +1,8 @@
 import { useState } from "react";
 import heroBgImg from "../assets/hero.jpeg";
-import Header, { Search } from "./Header";
+import Header from "./Header";
+import Container from "./Container";
+import SearchPop from "./SearchPop";
 
 export default function HeroSection() {
   const [darkBgGround, setDarkBgGround] = useState(false);
@@ -12,15 +14,17 @@ export default function HeroSection() {
       }}
     >
       {darkBgGround && (
-        <div className="absolute top-0 w-full h-full bg-black opacity-60 -z-10"></div>
+        <div className="absolute top-0 w-full h-full bg-black opacity-30 -z-10"></div>
       )}
       <div
-        className="absolute top-0 w-full h-full bg-gradient-to-b from-blue-900 to-blue-800
-] opacity-70 -z-20"
+        className="absolute top-0 w-full h-full bg-gradient-to-b from-hero-bg1 to-hero-bg2
+] opacity-80 -z-20"
       ></div>
       <Header>
-        <Search setDarkBgGround={setDarkBgGround} />
+        <SearchPop setDarkBgGround={setDarkBgGround} />
       </Header>
+
+      <Container />
     </div>
   );
 }
