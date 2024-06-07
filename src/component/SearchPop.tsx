@@ -1,13 +1,16 @@
-import { useState } from "react";
+
 import { IoIosClose } from "react-icons/io";
 import { IoSearch } from "react-icons/io5";
 
 export default function SearchPop({
   setDarkBgGround,
+  setOpenSearchBox,
+  openSearchBox,
 }: {
   setDarkBgGround: React.Dispatch<React.SetStateAction<boolean>>;
+  setOpenSearchBox: React.Dispatch<React.SetStateAction<boolean>>;
+  openSearchBox: boolean;
 }) {
-  const [openSearchBox, setOpenSearchBox] = useState(false);
   return (
     <>
       <IoSearch
@@ -20,7 +23,7 @@ export default function SearchPop({
       />
 
       <div
-        className={`absolute -top-12 right-[50%] translate-x-[50%] transition-all duration-300 ${
+        className={`absolute -top-12 right-[50%] translate-x-[50%] transition-all duration-300 z-40 ${
           openSearchBox && "top-32 "
         }`}
       >

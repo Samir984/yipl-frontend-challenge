@@ -1,4 +1,4 @@
-type dropDownNavItemsStucture = {
+type dropDownNavProps = {
   dropDownNavItems: {
     icon: string;
     label: string;
@@ -7,9 +7,7 @@ type dropDownNavItemsStucture = {
   }[];
 };
 
-export default function DropDownNav({
-  dropDownNavItems,
-}: dropDownNavItemsStucture) {
+export default function DropDownNav({ dropDownNavItems }: dropDownNavProps) {
   return (
     <div className="absolute  hidden  group-hover:flex flex-col z-20  top-7 rounded-lg  w-[412px] ">
       <div className="h-5"></div>

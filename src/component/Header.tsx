@@ -1,5 +1,6 @@
 import appLogo from "../assets/Company_logo.png";
 import { SlArrowDown } from "react-icons/sl";
+
 import { ReactNode } from "react";
 
 import blogIcon from "../assets/blog.png";
