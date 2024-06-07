@@ -65,8 +65,11 @@ export default function ContactFormSection() {
             </label>
             <textarea
               id="message"
+              rows={5}
+              cols={50}
+              
               name="message"
-              className="w-full border border-gray-300 h-8 rounded px-3 py-2 outline-none"
+              className="w-full border border-gray-300 p-8 rounded px-3 py-2 outline-none"
             />
           </div>
         </form>

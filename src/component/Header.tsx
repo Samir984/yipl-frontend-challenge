@@ -22,7 +22,7 @@ export default function Header({ children }: { children: ReactNode }) {
   );
 }
 
-function Logo() {
+export function Logo() {
   return (
     <a href="#">
       <img src={appLogo} alt="logo" />
