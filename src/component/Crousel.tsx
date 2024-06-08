@@ -19,33 +19,43 @@ const companiesIcons = [
   companyIcon5,
   companyIcon1,
 ];
-export default function Crousel() {
+
+export default function Carousel() {
   const [translatePoint, setTranslatePoint] = useState(0);
-  const triggerStyle = `translate-x-[${translatePoint}px]`;
-  const scrollLeft = function () {
-    setTranslatePoint((prev) => prev - 192);
+
+  const scrollLeft = () => {
+    setTranslatePoint((prev) => Math.min(prev + 192, 0));
   };
 
-  const scrollRight = function () {
-    setTranslatePoint((prev) => prev + 192);
+  const scrollRight = () => {
+    setTranslatePoint((prev) =>
+      Math.max(prev - 192, -(companiesIcons.length - 5) * 192)
+    );
   };
 
   return (
-    <div className="flex items-center justify-between gap-6 w- laptop:max-w-[1157px] px-8 mx-auto ">
-      <RiArrowLeftWideFill size={24} onClick={scrollLeft} />
+    <div className="flex items-center justify-between gap-6 w-full laptop:max-w-[1157px] px-8 mx-auto">
+      <RiArrowLeftWideFill
+        size={24}
+        onClick={scrollLeft}
+        className="cursor-pointer"
+      />
 
-      <div className="w-[92%]  overflow-hidden ">
+      <div className="w-[92%] overflow-hidden">
         <div
-          className={`flex justify-between  transition-transform duration-300  ${triggerStyle}`}
+          className="flex transition-transform duration-300"
+          style={{ transform: `translateX(${translatePoint}px)` }}
         >
-          {companiesIcons.map((icon, i) => {
-            return (
-              <img src={icon} key={i} alt="icons" className="w-48 px-10 " />
-            );
-          })}
+          {companiesIcons.map((icon, i) => (
+            <img src={icon} key={i} alt={`icon-${i}`} className="w-48 px-10" />
+          ))}
         </div>
       </div>
-      <RiArrowRightWideLine size={24} onClick={scrollRight} />
+      <RiArrowRightWideLine
+        size={24}
+        onClick={scrollRight}
+        className="cursor-pointer"
+      />
     </div>
   );
 }
