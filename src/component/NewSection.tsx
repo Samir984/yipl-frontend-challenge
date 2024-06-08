@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import SecondaryHeading from "./SecondaryHeading";
 import NewsCard from "./NewsCard";
+
 type NewsItemStructure = {
   title: string;
   date: string;
@@ -28,7 +29,11 @@ export default function NewSection() {
         const data = await response.json();
         setNews(data.news);
       } catch (error) {
-        setIsError(error.message);
+        if (error instanceof Error) {
+          setIsError(error.message);
+        } else {
+          setIsError("An unknown error occurred");
+        }
       } finally {
         setIsLoading(false);
       }
@@ -53,7 +58,7 @@ export default function NewSection() {
         ) : (
           <div className="flex flex-wrap items-center justify-center max-w-[1109px] gap-4 mx-auto ">
             {news?.map((newsItem, i) => {
-              if (i > 5 && !seeMore) return;
+              if (i > 5 && !seeMore) return null;
               return (
                 <div key={newsItem.date}>
                   <NewsCard
@@ -68,7 +73,7 @@ export default function NewSection() {
         )}
         {isError && (
           <div className="bg-red-600 px-4 py-2">
-            Something when wrong while fetching data
+            Something went wrong while fetching data: {isError}
           </div>
         )}
       </div>
