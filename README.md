@@ -14,4 +14,6 @@ $ npm run dev
 
 ```
 
+[live demo](https://yipl-frontend-challenge-bxxh.vercel.app/)
+
 # 🚀 🚀 🚀 🚀 🚀 🚀 🚀 🚀 🚀 🚀 🚀 🚀
