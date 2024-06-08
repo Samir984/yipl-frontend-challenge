@@ -10,7 +10,7 @@ export default function HeroSection() {
 
   return (
     <div
-      className={"w-full h-[728px] relative opacity-90 bg-cover bg-no-repeat "}
+      className={"w-full h-[728px] relative opacity-90 bg-cover bg-center bg-no-repeat "}
       style={{
         backgroundImage: `url(${heroBgImg})`,
       }}

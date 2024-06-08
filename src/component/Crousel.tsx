@@ -24,26 +24,36 @@ export default function Carousel() {
   const [translatePoint, setTranslatePoint] = useState(0);
 
   const scrollLeft = () => {
-    setTranslatePoint((prev) => Math.min(prev + 192, 0));
+    if (translatePoint < 0) {
+      setTranslatePoint((prev) => Math.min(prev + 192, 0));
+    }
   };
 
   const scrollRight = () => {
-    setTranslatePoint((prev) =>
-      Math.max(prev - 192, -(companiesIcons.length - 5) * 192)
-    );
+    const maxTranslate = -(companiesIcons.length - 5) * 192;
+    if (translatePoint > maxTranslate) {
+      setTranslatePoint((prev) => Math.max(prev - 192, maxTranslate));
+    }
   };
+
+  const maxTranslate = -(companiesIcons.length - 5) * 192;
+  const isLeftDisabled = translatePoint === 0;
+  const isRightDisabled = translatePoint === maxTranslate;
 
   return (
     <div className="flex items-center justify-between gap-6 w-full laptop:max-w-[1157px] px-8 mx-auto">
       <RiArrowLeftWideFill
         size={24}
         onClick={scrollLeft}
-        className="cursor-pointer"
+        className={`cursor-pointer ${
+          isLeftDisabled ? "text-gray-400" : "text-black"
+        }`}
+        style={{ pointerEvents: isLeftDisabled ? "none" : "auto" }}
       />
 
       <div className="w-[92%] overflow-hidden">
         <div
-          className="flex transition-transform duration-300"
+          className={`flex transition-transform duration-300 translate-x-[${translatePoint}px] `}
           style={{ transform: `translateX(${translatePoint}px)` }}
         >
           {companiesIcons.map((icon, i) => (
@@ -54,7 +64,10 @@ export default function Carousel() {
       <RiArrowRightWideLine
         size={24}
         onClick={scrollRight}
-        className="cursor-pointer"
+        className={`cursor-pointer ${
+          isRightDisabled ? "text-gray-400" : "text-black"
+        }`}
+        style={{ pointerEvents: isRightDisabled ? "none" : "auto" }}
       />
     </div>
   );
