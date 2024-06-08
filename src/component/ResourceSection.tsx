@@ -7,7 +7,7 @@ import outlineIcon from "../assets/Outline.png";
 export default function ResourceSection() {
   return (
     <div className="py-20 bg-[#F9F9FF]">
-      <div className="max-w-[1110px] mx-auto h-[572px]">
+      <div className="max-w-[1110px] mx-auto min-h-[572px]">
         <SecondaryHeading
           secondaryHeading="Latest Resources"
           text="The latest resources includes Transparency Toolkit, Evidence, Best Practices"
