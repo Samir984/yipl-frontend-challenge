@@ -8,8 +8,8 @@ import ImageContainer from "./ImageContainer";
 export default function AboutUsSection() {
   return (
     <div className=" w-full min-h-[1314px] py-12 ">
-      <div className="flex  justify-center flex-wrap gap-12 max-w-[1110px] mx-auto">
-        <div className="w-[368px] h-[440px">
+      <div className="flex  justify-center flex-wrap gap-12 tablet:max-w-[1110px] w-[96%] phone:w-[90%]  mx-auto">
+        <div className="w-[368px] h-[440px]  ">
           <h2 className="text-3xl font-inter font-semibold mb-5">Who we are</h2>
           <p className="font-mono text-xl text-gray-800 mb-8">
             We are a collaboration of Non Govt. and professionals working to
@@ -21,7 +21,7 @@ export default function AboutUsSection() {
           </p>
           <LearnMoreBtn label={"See more"} />
         </div>
-        <div className="grid grid-cols-2 gap-4 grid-rows-2 h-[900px] tablet:h-[1022px] ">
+        <div className="grid grid-cols-2 gap-4  grid-rows-2 laptop:h-[1022px] tablet:h-[900px] ">
           <ImageContainer
             image={person1}
             name="Adriana Homolova"

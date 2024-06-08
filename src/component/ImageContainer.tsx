@@ -10,7 +10,7 @@ export default function ImageContainer({
 }: ImageContainerType) {
   return (
     <div
-      className={`flex flex-col   justify-between max-w-[328px] h-[471px] ${
+      className={`flex flex-col   justify-between max-w-[328px] max-h-[471px] ${
         className && className
       }`}
     >

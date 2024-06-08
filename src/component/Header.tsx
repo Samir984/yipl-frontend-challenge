@@ -11,7 +11,7 @@ import DropDownNav from "./DropDownNav";
 export default function Header({ children }: { children: ReactNode }) {
   return (
     <div className="flex h-20 border-b-2 border-white items-center justify-center  ">
-      <div className="flex items-center justify-between  w-[97%] tablet:w-[90%] laptop:w-[80%]">
+      <div className="flex items-center justify-between  w-[97%] tablet:w-[96%] laptop:w-[80%]">
         <div className="flex  items-center gap-8  ">
           <Logo />
           <NavBar />

@@ -7,7 +7,7 @@ import youtube from "../assets/YouTube.png";
 export default function Footer() {
   return (
     <div
-      className="relative py-12 font-inter text-white opacity-90 bg-no-repeat bg-cover bg-center "
+      className="relative py-12  font-inter text-white opacity-90 bg-no-repeat bg-cover bg-center "
       style={{
         backgroundImage: `url(${heroBgImg})`,
       }}
@@ -16,7 +16,7 @@ export default function Footer() {
         className="absolute top-0 w-full h-full bg-gradient-to-b from-hero-bg1 to-hero-bg2
 ] opacity-80 -z-10"
       ></div>
-      <div className="flex flex-wrap gap-8 items-center justify-between  max-w-[1111px] mx-auto min-h-[214px] ">
+      <div className="flex flex-wrap laptop:gap-48 gap-10 items-center justify-center    px-6 max-w-[1340px] mx-auto min-h-[214px] ">
         <div className="flex flex-col gap-4 w-[304px]">
           <Logo />
           <p>
